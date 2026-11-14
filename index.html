@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#11100f">
+    <meta name="description" content="Flore Doleresse vous invite à célébrer ses 25 ans le 4 décembre 2026 au restaurant Wami.">
+    <title>Flore a 25 ans — Une soirée en or</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="opening" id="opening" aria-label="Invitation scellée" aria-describedby="openingHint">
+      <div class="envelope-stage">
+        <div class="envelope" id="envelope">
+          <div class="envelope__letter">
+            <span class="envelope__letter-kicker">Réservez cette soirée</span>
+            <span class="envelope__letter-name">Flore</span>
+            <span class="envelope__letter-age">25</span>
+            <span class="envelope__letter-copy">vous ouvre les portes de sa soirée</span>
+            <span class="envelope__letter-date">04 · XII · 2026</span>
+          </div>
+          <div class="envelope__back"></div>
+          <div class="envelope__lining"></div>
+          <div class="envelope__flap"></div>
+          <div class="envelope__front"></div>
+          <div class="envelope__address">
+            <span>INVITATION PRIVÉE</span>
+            <span>FLORE DOLERESSE · 25 ANS</span>
+          </div>
+          <button class="envelope__seal" id="openInvitation" type="button" aria-label="Ouvrir l’invitation">
+            <span>F</span>
+          </button>
+        </div>
+      </div>
+      <p class="opening__hint" id="openingHint">Touchez pour ouvrir</p>
+    </div>
+
+    <main class="page-content">
+      <section class="hero" id="accueil" tabindex="-1">
+        <div class="hero__grain" aria-hidden="true"></div>
+        <header class="site-header">
+          <a class="wordmark" href="#accueil" aria-label="Flore, accueil">F<span>.</span></a>
+          <span class="site-header__event">Une soirée en or · 2026</span>
+          <a class="header-link" href="#details">Les détails <span aria-hidden="true">↗</span></a>
+        </header>
+
+        <div class="hero__content">
+          <div class="hero__copy">
+            <p class="eyebrow hero__eyebrow"><span class="eyebrow__line"></span> Le 4 décembre 2026</p>
+            <h1>Une nuit<br>pour <em>briller.</em></h1>
+            <p class="hero__intro">Il y a des dates qu’on a envie de célébrer autrement. Cette année, Flore vous invite à souffler avec elle ses 25 bougies.</p>
+            <a class="text-link" href="#invitation">Découvrir l’invitation <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="hero__portrait-wrap">
+            <div class="hero__portrait-frame" aria-hidden="true"></div>
+            <img class="hero__portrait" src="WhatsApp%20Image%202026-11-14%20at%2011.38.166.jpeg" alt="Flore, élégante dans une tenue noire">
+            <span class="hero__portrait-caption">Flore Doleresse <span>·</span> 25 ans</span>
+            <span class="hero__portrait-number" aria-hidden="true">25</span>
+          </div>
+          <div class="hero__vertical" aria-hidden="true">UNE CÉLÉBRATION TOUT EN ÉLÉGANCE</div>
+        </div>
+        <a class="scroll-cue" href="#invitation"><span></span> Faites défiler</a>
+      </section>
+
+      <section class="invitation section-pad" id="invitation">
+        <div class="invitation__topline">
+          <span>Une invitation de Flore</span>
+          <span>04.12.26</span>
+        </div>
+        <div class="invitation__body">
+          <p class="eyebrow invitation__eyebrow">Chers amis, chère famille</p>
+          <h2>La vie est plus belle<br><em>à vos côtés.</em></h2>
+          <p class="invitation__message">Un quart de siècle, ça se fête. J’aimerais célébrer ce joli chapitre entourée de celles et ceux qui rendent chaque année inoubliable. Votre présence sera mon plus beau cadeau.</p>
+          <div class="invitation__signature">Flore<span>.</span></div>
+        </div>
+        <div class="invitation__bottom">
+          <span>Dress code</span>
+          <span class="palette" aria-label="Dress code : noir">
+            <i class="palette__black"></i>
+            <span>Noir</span>
+          </span>
+        </div>
+      </section>
+
+      <section class="countdown section-pad" aria-labelledby="countdownTitle">
+        <p class="eyebrow">Le grand soir approche</p>
+        <h2 class="sr-only" id="countdownTitle">Compte à rebours avant la fête</h2>
+        <div class="countdown__grid" id="countdown" aria-live="polite">
+          <div class="countdown__unit"><span data-unit="days">—</span><small>jours</small></div>
+          <span class="countdown__dot">:</span>
+          <div class="countdown__unit"><span data-unit="hours">—</span><small>heures</small></div>
+          <span class="countdown__dot">:</span>
+          <div class="countdown__unit"><span data-unit="minutes">—</span><small>minutes</small></div>
+          <span class="countdown__dot">:</span>
+          <div class="countdown__unit"><span data-unit="seconds">—</span><small>secondes</small></div>
+        </div>
+        <p class="countdown__note">4 décembre 2026 <span>·</span> 19 h</p>
+      </section>
+
+      <section class="details section-pad" id="details">
+        <div class="details__intro">
+          <p class="eyebrow">À noter dans votre agenda</p>
+          <h2>Le rendez-vous<br><em>est pris.</em></h2>
+          <p>Gardez la soirée du 4 décembre pour un moment précieux, des rires et de beaux souvenirs.</p>
+        </div>
+        <div class="details__card">
+          <div class="details__row">
+            <span class="details__label">La date</span>
+            <span class="details__value">Vendredi<br><strong>4 décembre 2026</strong></span>
+          </div>
+          <div class="details__row">
+            <span class="details__label">L’heure</span>
+            <span class="details__value"><strong>19 h</strong><br>Merci d’arriver à l’heure</span>
+          </div>
+          <div class="details__row">
+            <span class="details__label">Le lieu</span>
+            <span class="details__value"><strong>Restaurant Wami</strong><br>Une soirée tout en élégance</span>
+          </div>
+          <div class="details__row">
+            <span class="details__label">Le dress code</span>
+            <span class="details__value"><strong>Noir</strong><br>Une tenue entièrement noire est souhaitée</span>
+          </div>
+          <div class="details__actions">
+            <a class="button button--gold" href="https://www.google.com/maps/search/?api=1&amp;query=Restaurant+Wami" target="_blank" rel="noreferrer">Trouver Wami <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="portrait" aria-label="Portrait de Flore">
+        <div class="portrait__image-wrap">
+          <img
+            class="portrait__image"
+            src="WhatsApp%20Image%202026-11-14%20at%2011.38.15.jpeg"
+            alt="Flore en robe turquoise brodée, dans un portrait de fête"
+            loading="lazy"
+          >
+          <span class="portrait__number" aria-hidden="true">25</span>
+        </div>
+        <div class="portrait__caption">
+          <p class="eyebrow">Un nouveau chapitre</p>
+          <h2>Flore, dans<br><em>la lumière.</em></h2>
+          <span>4 décembre 2026 <i aria-hidden="true">·</i> Wami</span>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <a class="wordmark wordmark--footer" href="#accueil" aria-label="Retour en haut">F<span>.</span></a>
+        <p>Avec amour, <span>Flore</span></p>
+        <a class="footer__top" href="#accueil">Retour en haut ↑</a>
+        <small>4 DÉCEMBRE 2026 · WAMI</small>
+      </footer>
+    </main>
+  </body>
+</html>
