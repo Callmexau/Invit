@@ -5,6 +5,7 @@ const openingHint = document.querySelector('#openingHint');
 let openingTimers = [];
 
 function dismissOpening() {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   openingTimers.forEach(window.clearTimeout);
   openingTimers = [];
   document.querySelector('.page-content').classList.add('is-revealed');
@@ -12,7 +13,7 @@ function dismissOpening() {
   window.setTimeout(() => {
     opening.hidden = true;
     document.querySelector('#accueil').focus({ preventScroll: true });
-  }, 1400);
+  }, reducedMotion ? 0 : 1400);
 }
 
 openInvitation.addEventListener('click', () => {
@@ -23,10 +24,13 @@ openInvitation.addEventListener('click', () => {
   openingTimers.push(window.setTimeout(() => {
     envelope.classList.remove('is-unsealing');
     envelope.classList.add('is-open');
-    openingHint.textContent = 'Votre invitation vous attend…';
+    openingHint.textContent = 'Votre invitation se dévoile…';
   }, reducedMotion ? 0 : 360));
-  openingTimers.push(window.setTimeout(() => opening.classList.add('is-revealing'), reducedMotion ? 0 : 1300));
-  openingTimers.push(window.setTimeout(dismissOpening, reducedMotion ? 400 : 3300));
+  openingTimers.push(window.setTimeout(() => {
+    opening.classList.add('is-revealing');
+    openingHint.textContent = 'Découvrez votre invitation…';
+  }, reducedMotion ? 0 : 1900));
+  openingTimers.push(window.setTimeout(dismissOpening, reducedMotion ? 400 : 3650));
 });
 
 function updateCountdown() {
