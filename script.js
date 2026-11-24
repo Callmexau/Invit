@@ -2,13 +2,38 @@ const opening = document.querySelector('#opening');
 const envelope = document.querySelector('#envelope');
 const openInvitation = document.querySelector('#openInvitation');
 const openingHint = document.querySelector('#openingHint');
+const backgroundMusic = document.querySelector('#backgroundMusic');
+const musicToggle = document.querySelector('#musicToggle');
 let openingTimers = [];
+let musicFailed = false;
+
+function updateMusicToggle() {
+  const isPlaying = !backgroundMusic.paused;
+  const label = isPlaying ? 'Arrêter la musique' : 'Relancer la musique';
+  musicToggle.setAttribute('aria-label', label);
+  musicToggle.setAttribute('aria-pressed', String(isPlaying));
+  musicToggle.title = label;
+}
+
+function updateOpeningHint(message) {
+  if (!musicFailed) openingHint.textContent = message;
+}
+
+function startBackgroundMusic() {
+  backgroundMusic.volume = 0.35;
+  backgroundMusic.play().catch((error) => {
+    musicFailed = true;
+    openingHint.textContent = 'La musique n’a pas pu démarrer.';
+    console.error('Impossible de lancer la musique de fond.', error);
+  });
+}
 
 function dismissOpening() {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   openingTimers.forEach(window.clearTimeout);
   openingTimers = [];
   document.querySelector('.page-content').classList.add('is-revealed');
+  musicToggle.classList.add('is-visible');
   opening.classList.add('is-leaving');
   window.setTimeout(() => {
     opening.hidden = true;
@@ -19,18 +44,29 @@ function dismissOpening() {
 openInvitation.addEventListener('click', () => {
   if (envelope.classList.contains('is-unsealing') || envelope.classList.contains('is-open')) return;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  startBackgroundMusic();
   envelope.classList.add('is-unsealing');
-  openingHint.textContent = 'Le sceau se brise doucement…';
+  updateOpeningHint('Le sceau se brise doucement…');
   openingTimers.push(window.setTimeout(() => {
     envelope.classList.remove('is-unsealing');
     envelope.classList.add('is-open');
-    openingHint.textContent = 'Votre invitation se dévoile…';
+    updateOpeningHint('Votre invitation se dévoile…');
   }, reducedMotion ? 0 : 360));
   openingTimers.push(window.setTimeout(() => {
     opening.classList.add('is-revealing');
-    openingHint.textContent = 'Découvrez votre invitation…';
+    updateOpeningHint('Découvrez votre invitation…');
   }, reducedMotion ? 0 : 1900));
   openingTimers.push(window.setTimeout(dismissOpening, reducedMotion ? 400 : 3650));
+});
+
+backgroundMusic.addEventListener('play', updateMusicToggle);
+backgroundMusic.addEventListener('pause', updateMusicToggle);
+musicToggle.addEventListener('click', () => {
+  if (backgroundMusic.paused) {
+    startBackgroundMusic();
+  } else {
+    backgroundMusic.pause();
+  }
 });
 
 function updateCountdown() {
