@@ -13,7 +13,7 @@ function dismissOpening() {
   window.setTimeout(() => {
     opening.hidden = true;
     document.querySelector('#accueil').focus({ preventScroll: true });
-  }, reducedMotion ? 0 : 1400);
+  }, reducedMotion ? 0 : 1600);
 }
 
 openInvitation.addEventListener('click', () => {
