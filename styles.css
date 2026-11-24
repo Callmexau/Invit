@@ -85,6 +85,16 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .page-content.is-revealed .hero__copy { animation: content-reveals .9s .25s both; }
 .page-content.is-revealed .hero__portrait-wrap { animation: content-reveals .95s .42s both; }
 .page-content.is-revealed .scroll-cue { animation: scroll-cue-reveals .8s .55s both; }
+.scroll-reveal { opacity: 0; transform: translateY(28px) scale(.985); filter: blur(6px); transition: opacity 1s ease, transform 1.15s cubic-bezier(.22,.75,.24,1), filter 1s ease; }
+.scroll-reveal.is-visible { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+.countdown__unit:nth-of-type(1) { transition-delay: .08s; }
+.countdown__unit:nth-of-type(2) { transition-delay: .16s; }
+.countdown__unit:nth-of-type(3) { transition-delay: .24s; }
+.countdown__unit:nth-of-type(4) { transition-delay: .32s; }
+.details__row:nth-child(2) { transition-delay: .08s; }
+.details__row:nth-child(3) { transition-delay: .16s; }
+.details__row:nth-child(4) { transition-delay: .24s; }
+.details__row:nth-child(5) { transition-delay: .32s; }
 @keyframes envelope-arrives { from { transform: translateY(24px) scale(.96); opacity: 0; } to { transform: translateY(0) scale(1); opacity: 1; } }
 @keyframes content-reveals { from { transform: translateY(22px); opacity: 0; filter: blur(4px); } to { transform: translateY(0); opacity: 1; filter: blur(0); } }
 @keyframes scroll-cue-reveals { from { transform: translate(-50%,22px); opacity: 0; } to { transform: translate(-50%,0); opacity: 1; } }
